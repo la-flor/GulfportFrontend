@@ -1,0 +1,74 @@
+@import '../../CSSReset.css';
+@import '../../App.scss';
+
+.Events {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap-reverse;
+	width: 100vw;
+	&__List {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 37.5rem;
+		height: 37.5rem;
+		margin-top: 4rem;
+		overflow-y: scroll;
+	}
+	&__Calendar {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 37.5rem;
+		height: 37.5rem;
+		margin-top: 3rem;
+		border-radius: 7px;
+		box-shadow: $boxshadow;
+		iframe {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.Events__Item {
+	height: 60px;
+	width: 80%;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	border-radius: 7px;
+	box-shadow: $boxshadow;
+	transition: transform 1s;
+	user-select: none;
+	h5 {
+		font-size: clamp(1rem, 2.25vw, 1.25rem);
+		margin-bottom: 5px;
+	}
+	p {
+		font-size: clamp(0.75rem, 2vw, 0.9rem);
+	}
+}
+
+.Events__Item:hover {
+	transform: scale(1.1);
+}
+
+@media screen and (max-width: 400px) {
+	.Events__List {
+		margin-bottom: 2rem;
+	}
+	.Events__List,
+	.Events__Calendar {
+		width: auto;
+	}
+}
+
+@media screen and (min-width: 401px) and (max-width: 1260px) {
+	.Events__List {
+		margin-bottom: 2rem;
+	}
+	.Events__List,
+	.Events__Calendar {
+		width: 80vw;
+	}
+}
